@@ -8,11 +8,11 @@ function updateCurrentTime() {
   
   const currentDay = daysOfWeek[new Date().getUTCDay()];
   const currentTime = new Date().toUTCString();
-  const milliseconds = new Date().getUTCMilliseconds();
+  const currentTimeInMilliseconds = new Date().getTime();
 
   currentDayElement.textContent = currentDay;
   currentUTCTimeElement.textContent = currentTime;
-  currentUTCTimeInMillisecondsElement.textContent = milliseconds;
+  currentUTCTimeInMillisecondsElement.textContent = currentTimeInMilliseconds + ' milliseconds';
 }
 
 // Update the current time every second
@@ -20,3 +20,4 @@ setInterval(updateCurrentTime, 1000);
 
 // Call the function to display initial data
 updateCurrentTime();
+
